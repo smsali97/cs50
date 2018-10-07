@@ -1,0 +1,99 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Results for your query:
+{% endblock %}
+
+{% block main %}
+    <p>
+      <b>Your stock info is as follows: </b> </br>
+     <!-- <i> {{ items }}</i>-->
+       <center> 
+       
+       <table>
+        <b>   
+        <tr>
+        <td>
+            Name
+        </td>    
+        <td>
+            Symbol
+        </td>
+        <td>
+            Price
+        </td>
+        <td>
+            Shares
+        </td>
+        <td>
+            Total
+        </td>
+        </tr>  
+        {% for item in items %}
+        <tr>
+            <td>
+                {{ item["Name"] }}
+            </td>
+            <td>
+                {{ item["Symbol"] }}
+            </td>
+            <td>
+                {{ item["Price"] }}
+            </td>
+            <td>
+                {{ item["Shares"] }}
+            </td>
+            <td>
+                {{ item["Total"] }}
+            </td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <font color="green"> Cash remaining: {{cash}} </font>
+        </tr>
+       </table>
+       
+       </center>
+       </p>
+       {% endblock %}
+   <!--- {% for item in items %}
+    {% for key, value in item.items() %}
+    <dt>{{ key}}</dt>
+    <dd>{{ value}}</dd>
+    {% endfor %}
+    {% endfor %} --->
+    <!--<table>
+    <tr bold>
+        <td>
+            Shares
+        </td>
+        <td>
+            Symbol
+        </td>
+        <td>
+            Price
+        </td>
+        <td>
+            Name
+        </td>
+        <td>
+            Total
+        </td>
+    </tr>
+    {% for dict_item in items %}
+     <tr>
+    {% for key, value in dict_item.items() %}
+     <td><tab>
+     {{value}} 
+     </tab></td> 
+    {% endfor %}
+    </tr> 
+    {% endfor %}-->
+    <!--<tr>
+            <font color="green"> Cash remaining: {{cash}} </font>
+    </tr>
+    </table>
+    
+    
+      </center>
+    </p>-->

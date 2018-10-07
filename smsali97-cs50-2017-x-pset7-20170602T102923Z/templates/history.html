@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Results for your query:
+{% endblock %}
+
+{% block main %}
+    <p>
+      <h1> <font color="green"> Your history info is as follows:  </font> </h1> </br>
+       <center> 
+       <table>
+        <b>   
+        <tr>
+        <td>
+            Symbol
+        </td>    
+        <td>
+            Type
+        </td>
+        <td>
+            Price
+        </td>
+        <td>
+            Shares
+        </td>
+        <td>
+            Date
+        </td>
+        </tr>  
+        {% for item in items %}
+        <tr>
+            <td>
+                {{ item["Symbol"] }}
+            </td>
+            <td>
+                {{ item["Type"] }}
+            </td>
+            <td>
+                {{ item["Price"] }}
+            </td>
+            <td>
+                {{ item["Shares"] }}
+            </td>
+            <td>
+                {{ item["Date"] }}
+            </td>
+        </tr>
+        {% endfor %}
+       </table>
+       
+       </center>
+       </p>
+       {% endblock %}

@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Results for your query:
+{% endblock %}
+
+{% block main %}
+    <p>
+      <b>Your stock info is as follows: </b> </br>
+       <center> 
+ {% for key, value in info.items() %}
+    <dt>{{ key}}</dt>
+    <dd>{{ value}}</dd>
+ {% endfor %}
+      </center>
+    </p>
+{% endblock %}
